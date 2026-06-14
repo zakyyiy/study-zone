@@ -227,3 +227,184 @@ nav{position:sticky;top:0;z-index:100;background:rgba(13,13,20,.85);backdrop-fil
 .mfnav-btn.next{text-align:right}
 .mfnav-dir{font-size:10px;font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:2px}
 .mfnav-label{font-size:13px;font-weight:600;line-height:1.3}
+
+/* ==========================================================================
+   FITUR LIGHT MODE OVERRIDES 
+   (Taruh di paling bawah file style.css)
+   ========================================================================== */
+
+/* 1. Timpa variabel warna aslimu saat class .light aktif */
+body.light {
+  --bg: #f4f6f8;            /* Background utama halaman jadi abu-abu terang */
+  --surface: #ffffff;       /* Area gambar/search jadi putih */
+  --card: #ffffff;          /* Background KARTU MATERI jadi PUTIH */
+  --border: #cbd5e1;        /* Garis pinggir jadi abu-abu muda */
+  --text: #1e293b;          /* Teks utama jadi gelap */
+  --muted: #64748b;         /* Teks deskripsi jadi abu-abu */
+}
+
+/* 2. Karena bawaan webmu banyak pakai efek kaca (rgba 255 putih transparan), 
+      kita harus ubah jadi warna solid agar terlihat di Light Mode */
+body.light .chip,
+body.light .mstat,
+body.light .materi-nav-btn,
+body.light .materi-back-btn,
+body.light .ch-body {
+    background: #ffffff;
+    border-color: var(--border);
+    color: var(--text);
+}
+
+body.light .materi-body, 
+body.light .materi-empty {
+    color: var(--text);
+    background: var(--card);
+}
+
+/* Tombol close di modal agar tidak putih di atas putih */
+body.light .modal-close {
+    background: #f1f5f9;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
+}
+
+/* ==========================================================================
+   ANIMASI SLIDER (TOGGLE GESER KIRI-KANAN)
+   ========================================================================== */
+
+/* 1. Track Slider (Wadah luar berbentuk kapsul) */
+.theme-toggle-btn {
+    position: relative;
+    width: 64px;
+    height: 32px;
+    border-radius: 30px;
+    background: #1e293b; /* Warna track saat Dark Mode */
+    border: 2px solid #334155;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.4s ease, border-color 0.4s ease;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.3); /* Efek bayangan ke dalam */
+}
+
+/* Warna Track saat berubah ke Light Mode */
+body.light .theme-toggle-btn {
+    background: #cbd5e1;
+    border-color: #94a3b8;
+}
+
+/* 2. Lingkaran putih yang bergeser (Thumb) */
+.slider-thumb {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    /* Animasi translateX membuat lingkaran bergeser mulus */
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.4s;
+}
+
+/* Kunci Animasinya: Geser lingkaran ke KANAN sejauh 32px saat Light Mode aktif */
+body.light .slider-thumb {
+    transform: translateX(32px);
+    background: #f8fafc;
+}
+
+/* 3. Ikon di dalam lingkaran */
+.slider-thumb span {
+    position: absolute;
+    font-size: 14px; /* Ukuran diperkecil agar pas di dalam lingkaran 24px */
+    transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+/* Posisi Default (Dark Mode): Matahari tampil */
+.slider-thumb .icon-sun {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+.slider-thumb .icon-moon {
+    opacity: 0;
+    transform: scale(0) rotate(-90deg);
+}
+
+/* Posisi Aktif (Light Mode): Bulan tampil */
+body.light .slider-thumb .icon-sun {
+    opacity: 0;
+    transform: scale(0) rotate(90deg);
+}
+body.light .slider-thumb .icon-moon {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+.theme-toggle-btn .icon-moon { display: none; }
+.theme-toggle-btn .icon-sun { display: inline; }
+
+body.light .theme-toggle-btn .icon-sun { display: none; }
+body.light .theme-toggle-btn .icon-moon { display: inline; }
+
+/* Mengubah Navbar utama menjadi putih transparan dengan efek kaca */
+body.light nav {
+    background: rgba(255, 255, 255, 0.85);
+}
+
+/* Memastikan teks logo 'StudyZone' di navbar berwarna gelap agar terbaca */
+body.light .brand {
+    color: var(--text);
+}
+
+/* Mengubah Topbar (Navbar di dalam overlay materi) menjadi putih */
+body.light .materi-topbar {
+    background: rgba(255, 255, 255, 0.92);
+}
+
+/* Mengubah Footer Navigasi Materi (tombol Sebelumnya & Selanjutnya) menjadi putih */
+body.light .mfnav-btn {
+    background: #ffffff;
+    border-color: var(--border);
+    color: var(--text);
+}
+
+/* Memastikan teks 'Kosong' / 'Ada' pada list topik bab ikut menyesuaikan */
+body.light .ch-topic-btn .tb-badge.empty {
+    background: #f1f5f9;
+    color: #94a3b8;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Jarak antara toggle dan teks KELAS X */
+}
+
+/* ==========================================================================
+   PENGATURAN LEBAR KONTAINER MATERI
+   ========================================================================== */
+
+/* 1. Membuat wadah pembungkus utama materi menjadi lebih lebar */
+.materi-wrap {
+    width: 100%;            /* Mengambil 92% dari lebar layar */
+    max-width: 1600px;     /* Batas maksimal lebar baru (biasanya default hanya 800px) */
+    margin: 0 auto;        /* Memastikan kontainer tetap berada di tengah halaman */
+    padding: 2rem 1.5rem;  /* Mengatur jarak dalam agar tetap rapi */
+}
+
+/* 2. Memastikan isi materi di dalamnya melebar penuh mengikuti kontainer luar */
+#mBody {
+    width: 100%;
+}
+
+/* 3. JIKA materi kamu dibuka di dalam MODAL / OVERLAY yang juga terasa sempit,
+      buka baris kode di bawah ini dengan menghapus tanda komentar: */
+/*
+.materi-overlay {
+    max-width: 95% !important; 
+}
+*/

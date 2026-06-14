@@ -604,3 +604,34 @@ document.querySelectorAll('.ftab').forEach(btn=>{
 document.getElementById('searchInput').addEventListener('input',renderGrid);
 
 renderGrid();
+
+// Taruh kode ini di bagian paling bawah file js/app.js kamu
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('studyzone-theme');
+
+    // Cek tema saat halaman pertama kali dibuka
+    if (savedTheme === 'light') {
+        document.body.classList.add('light');
+    }
+
+    // Logika ketika tombol di-klik
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', (e) => {
+            e.preventDefault(); // Mencegah halaman reload otomatis
+            
+            document.body.classList.toggle('light');
+            
+            // Simpan status ke localStorage
+            if (document.body.classList.contains('light')) {
+                localStorage.setItem('studyzone-theme', 'light');
+                console.log("Mode berubah: Light Mode");
+            } else {
+                localStorage.setItem('studyzone-theme', 'dark');
+                console.log("Mode berubah: Dark Mode");
+            }
+        });
+    } else {
+        console.error("Tombol dengan id 'theme-toggle' TIDAK ditemukan di HTML!");
+    }
+});
