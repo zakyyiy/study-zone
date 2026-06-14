@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>punya kyyy — materi buat Kelas 10 SMA</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="particles"></canvas>
+
+<nav>
+  <a class="brand" href="#"><em>Study</em>Zone</a>
+  <span class="kelas-badge">KELAS X</span>
+</nav>
+
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-eyebrow"><span class="dot-pulse"></span>Materi Lengkap · Tahun Ajaran 2024/2025</div>
+  <h1>Belajar lebih<br><span class="hl">seru &amp; efektif</span></h1>
+  <p class="hero-sub">8 mata pelajaran, 40+ bab, ratusan topik — dikemas dalam satu tempat buat kamu yang nggak mau ribet.</p>
+  <div class="hero-chips">
+    <span class="chip">📐 Matematika</span><span class="chip">⚡ Fisika</span>
+    <span class="chip">🧪 Kimia</span><span class="chip">🌿 Biologi</span>
+    <span class="chip">📝 B. Indonesia</span><span class="chip">🏛️ Sejarah</span>
+    <span class="chip">📊 Ekonomi</span><span class="chip">🌐 B. Inggris</span>
+  </div>
+</section>
+
+<!-- SEARCH -->
+<div class="search-wrap">
+  <div class="search-inner">
+    <span class="search-icon-el">🔍</span>
+    <input class="search-input" id="searchInput" type="text" placeholder="Cari pelajaran...">
+  </div>
+</div>
+
+<div class="filter-row">
+  <button class="ftab active" data-f="all">Semua</button>
+  <button class="ftab" data-f="sains">Sains</button>
+  <button class="ftab" data-f="sosial">Sosial</button>
+  <button class="ftab" data-f="bahasa">Bahasa</button>
+  <button class="ftab" data-f="eksakta">Eksakta</button>
+</div>
+
+<div class="grid-wrap">
+  <div class="section-eyebrow" id="gridLabel">— 8 Mata Pelajaran</div>
+  <div class="subject-grid" id="grid"></div>
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <div class="modal-hero" id="modalHero">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-info">
+      <div class="modal-title" id="mTitle"></div>
+      <div class="modal-desc" id="mDesc"></div>
+      <div class="modal-stat-row" id="mStats"></div>
+    </div>
+    <div class="chapters" id="mChapters"></div>
+  </div>
+</div>
+
+<div class="materi-overlay" id="materiOverlay">
+  <div class="materi-topbar">
+    <button class="materi-back-btn" onclick="closeMateri()">← Kembali</button>
+    <div class="materi-topbar-title" id="topbarTitle"></div>
+    <div class="materi-nav-btns">
+      <button class="materi-nav-btn" id="btnPrev" onclick="navigateMateri(-1)" title="Topik sebelumnya">‹</button>
+      <button class="materi-nav-btn" id="btnNext" onclick="navigateMateri(1)"  title="Topik selanjutnya">›</button>
+    </div>
+  </div>
+
+  <div class="materi-wrap">
+    <div class="materi-breadcrumb" id="mBreadcrumb"></div>
+
+    <div class="materi-header">
+      <div class="materi-num" id="mNum"></div>
+      <div class="materi-judul" id="mJudul"></div>
+      <div class="materi-meta" id="mMeta"></div>
+    </div>
+
+    <div class="materi-img-section" id="mImgSection"></div>
+
+    <!-- isi materi -->
+    <div id="mBody"></div>
+
+    <!-- nav bawah -->
+    <div class="materi-footer-nav">
+      <button class="mfnav-btn prev" id="fnPrev" onclick="navigateMateri(-1)">
+        <div class="mfnav-dir">← Sebelumnya</div>
+        <div class="mfnav-label" id="fnPrevLabel">—</div>
+      </button>
+      <button class="mfnav-btn next" id="fnNext" onclick="navigateMateri(1)">
+        <div class="mfnav-dir">Selanjutnya →</div>
+        <div class="mfnav-label" id="fnNextLabel">—</div>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
