@@ -1,49 +1,37 @@
+<div class="materi-container" style="padding: 20px; font-family: sans-serif; line-height: 1.6;">
+  <h2 style="color: #a78bfa; border-bottom: 2px solid #a78bfa; padding-bottom: 8px;">✨ Rangkuman Eksponen (Pangkat)</h2>
+  <p>Eksponen adalah perkalian berulang dari suatu bilangan pokok yang sama.</p>
+  
+  <div style="background: rgba(82, 46, 145, 0.486); border-left: 4px solid #a78bfa; padding: 15px; margin: 15px 0; border-radius: 4px;">
+    <strong>Bentuk Umum:</strong><br>
+    <span style="font-size: 1.2rem; font-style: italic;">a<sup>n</sup> = a &times; a &times; a &times; ... &times; a</span> (sebanyak n faktor)
+  </div>
 
-    <h1>A. Rumus-rumus Eksponen</h1>
-    <p>Bagian ini menjelaskan aturan dasar saat mengoperasikan bilangan berpangkat:</p>
-    <ul>
-      <li><strong>Perkalian</strong>: Jika bilangan pokoknya sama (a), maka pangkatnya dijumlahkan: a<sup>p</sup> × a<sup>q</sup> = a<sup>p+q</sup>.</li>
-      <li><strong>Pembagian</strong>: Jika bilangan pokoknya sama, pangkatnya dikurangi: a<sup>p</sup> : a<sup>q</sup> = a<sup>p−q</sup>.</li>
-      <li><strong>Perpangkatan Pangkat</strong>: (a<sup>p</sup>)<sup>q</sup> = a<sup>pq</sup>.</li>
-      <li><strong>Perkalian dalam Pangkat</strong>: (ab)<sup>p</sup> = a<sup>p</sup> b<sup>p</sup>.</li>
-      <li><strong>Pangkat Nol</strong>: Setiap bilangan (kecuali 0) dipangkatkan 0 hasilnya adalah 1.</li>
-      <li><strong>Pangkat Negatif</strong>: a<sup>−p</sup> = 1 / a<sup>p</sup>.</li>
-      <li><strong>Pangkat Pecahan (Akar)</strong>: a<sup>q/p</sup> = &radic;<sub>p</sub>(a)<sup>q</sup> = (&radic;<sub>p</sub>a)<sup>q</sup> = a<sup>q/p</sup>.</li>
-    </ul>
-
-    <h2>B. Bentuk-bentuk Akar</h2>
-    <p>Hubungan antara eksponen dan akar memiliki sifat serupa dengan rumus eksponen di atas. Contoh:</p>
-    <ul>
-      <li>(b / a)<sup>p</sup> = b<sup>p</sup> / a<sup>p</sup>.</li>
-      <li>Akar di dalam akar: &radic;<sub>p</sub>(&radic;<sub>q</sub>a) = &radic;<sub>pq</sub>a = a<sup>1/(pq)</sup>.</li>
-      <li>Secara umum, a<sup>m/n</sup> = (&radic;<sub>n</sub>a)<sup>m</sup> = &radic;<sub>n</sub>(a<sup>m</sup>).</li>
-    </ul>
-
-    <h2>C. Persamaan Eksponen</h2>
-    <p>Bagian ini menjelaskan teknik menyelesaikan persamaan yang melibatkan pangkat:</p>
-    <ul>
-      <li><strong>Basis Sama</strong>: Jika a<sup>f(x)</sup> = a<sup>g(x)</sup>, maka selesaikan f(x) = g(x).</li>
-      <li><strong>Pangkat Sama, Basis Berbeda</strong>: Jika a<sup>f(x)</sup> = b<sup>f(x)</sup>, maka solusinya adalah f(x) = 0.</li>
-      <li><strong>Basis dan Pangkat Berbeda</strong>: Gunakan logaritma: f(x) · log a = g(x) · log b.</li>
-      <li><strong>Basis Berupa Fungsi</strong> (f(x)<sup>g(x)</sup> = f(x)<sup>h(x)</sup>): kemungkinan solusi
-        <ul>
-          <li>g(x) = h(x).</li>
-          <li>f(x) = 1.</li>
-          <li>f(x) = −1, dengan syarat g(x) dan h(x) keduanya ganjil atau keduanya genap.</li>
-          <li>f(x) = 0, dengan syarat pangkatnya positif (g(x) &gt; 0 dan h(x) &gt; 0).</li>
-        </ul>
-      </li>
-      <li><strong>Pangkat Fungsi Sama</strong> (g(x)<sup>f(x)</sup> = h(x)<sup>f(x)</sup>):
-        <ul>
-          <li>g(x) = h(x).</li>
-          <li>f(x) = 0, dengan syarat basis tidak boleh nol.</li>
-        </ul>
-      </li>
-      <li><strong>Persamaan Hasilnya 1</strong> (f(x)<sup>g(x)</sup> = 1):
-        <ul>
-          <li>f(x) = 1.</li>
-          <li>g(x) = 0 (asalkan basis bukan 0).</li>
-          <li>f(x) = −1, dengan syarat pangkatnya genap.</li>
-        </ul>
-      </li>
-    </ul>
+  <h3 style="color: #a78bfa; margin-top: 20px;">📚 Sifat-Sifat Utama Eksponen</h3>
+  <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+    <thead>
+      <tr style="background-color: rgba(167, 139, 250, 0.486);">
+        <th style="padding: 10px; border: 1px solid rgba(167, 139, 250, 0.486); text-align: left;">Sifat</th>
+        <th style="padding: 10px; border: 1px solid rgba(167, 139, 250, 0.377); text-align: left;">Rumus matematika</th>
+        <th style="padding: 10px; border: 1px solid rgba(167, 139, 250, 0.486); text-align: left;">Contoh</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 10px; border: 1px solid rgba(167, 139, 250, 0.486);">Perkalian</td>
+        <td style="padding: 10px; border: 1px solid rgba(167, 139, 250, 0.486);"><b>a<sup>m</sup> &times; a<sup>n</sup> = a<sup>m+n</sup></b></td>
+        <td style="padding: 10px; border: 1px solid rgba(167, 139, 250, 0.486);">2<sup>3</sup> &times; 2<sup>2</sup> = 2<sup>5</sup> = 32</td>
+      </tr>
+      <tr style="background-color: rgba(128,128,128,0.05);">
+        <td style="padding: 10px; border: 1px solid rgba(167, 139, 250, 0.486);">Pembagian</td>
+        <td style="padding: 10px; border: 1px solid rgba(167, 139, 250, 0.486);"><b>a<sup>m</sup> / a<sup>n</sup> = a<sup>m-n</sup></b></td>
+        <td style="padding: 10px; border: 1px solid rgba(167, 139, 250, 0.486);">5<sup>4</sup> / 5<sup>2</sup> = 5<sup>2</sup> = 25</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; border: 1px solid rgba(167, 139, 250, 0.486);">Perpangkatan</td>
+        <td style="padding: 10px; border: 1px solid rgba(167, 139, 250, 0.486);"><b>(a<sup>m</sup>)<sup>n</sup> = a<sup>m &times; n</sup></b></td>
+        <td style="padding: 10px; border: 1px solid rgba(167, 139, 250, 0.486);">(3<sup>2</sup>)<sup>3</sup> = 3<sup>6</sup></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
