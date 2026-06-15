@@ -1,0 +1,141 @@
+/* ==========================================================================
+   OVERLAY & CONTAINER UTAMA (MELAYANG DI TENGAH)
+   ========================================================================== */
+.auth-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.9); /* Gelap transparan menutupi web utama */
+    backdrop-filter: blur(8px); /* Efek kaca buram di background */
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* KOTAK LOGIN */
+.auth-card {
+    background: #1e293b; /* Warna navy metalik disamain sama card web kamu */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 35px 25px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* JUDUL & TEXT */
+.auth-card h2 {
+    font-size: 24px;
+    margin: 0 0 5px 0;
+    font-weight: 700;
+}
+
+.auth-card h2 span {
+    color: #38bdf8; /* Aksen biru cerah */
+}
+
+.auth-card p {
+    color: #94a3b8;
+    font-size: 14px;
+    margin: 0 0 25px 0;
+}
+
+/* ==========================================================================
+   KOLOM INPUT & TOMBOL MANUAL
+   ========================================================================== */
+.auth-card input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #475569;
+    background: #0f172a; /* Input dibikin agak gelap biar kontras */
+    color: #ffffff;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.auth-card input:focus {
+    outline: none;
+    border-color: #38bdf8;
+}
+
+/* Tombol Login Manual */
+#loginManual {
+    width: 100%;
+    padding: 12px;
+    background: #38bdf8;
+    color: #0f172a;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: opacity 0.2s;
+}
+
+#loginManual:hover {
+    opacity: 0.9;
+}
+
+/* GARIS TENGAH (DIVIDER OLEH "ATAU") */
+.divider {
+    margin: 20px 0;
+    position: relative;
+    text-align: center;
+}
+
+.divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #475569;
+    z-index: 1;
+}
+
+.divider span {
+    background: #1e293b; /* Warna background disamain persis sama kotak login */
+    padding: 0 10px;
+    color: #94a3b8;
+    font-size: 13px;
+    position: relative;
+    z-index: 2;
+}
+
+/* ==========================================================================
+   TOMBOL GOOGLE SIGN-IN
+   ========================================================================== */
+.btn-google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    color: #334155;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-google:hover {
+    background: #f8fafc;
+}
+
+.btn-google img {
+    display: block;
+}
